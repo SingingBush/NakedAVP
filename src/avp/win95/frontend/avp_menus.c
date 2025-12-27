@@ -36,6 +36,11 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 
+#ifndef SDL_init_h_
+// Need to ensure SDL3 is included as this source file uses SDL_StartTextInput(SDL_Window *window)
+#include <SDL3/SDL.h>
+#endif
+
 int SelectDirectDrawObject(void *pGUID);
                     
 extern void StartMenuBackgroundBink(void);
